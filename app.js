@@ -9,10 +9,11 @@ const shopRoutes = require('./routes/shop');
 
 app.use(bodyParser.urlencoded({extended: false}));
 
-app.use(adminRoutes);
+// Outsourced routes
+app.use('/admin', adminRoutes);
 app.use(shopRoutes);
 
-app.use((req, res, next) => {  // 'catch-all' middleware to catch unhandled routes
+app.use((req, res, next) => {  // 'catch-all' route for dealing with unhandled routes
     res.status(404).send('<h1>Page Not Found!</h1>');
 });
 

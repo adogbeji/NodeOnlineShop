@@ -10,6 +10,7 @@ const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.static(path.join(__dirname, 'public')));  // Serves files statically
 
 // Outsourced routes
 app.use('/admin', adminRoutes);

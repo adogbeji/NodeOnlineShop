@@ -20,7 +20,7 @@ app.use('/admin', adminData.routes);
 app.use(shopRoutes);
 
 app.use((req, res, next) => {  // 'catch-all' route for dealing with unhandled routes
-    res.status(404).render('404', { pageTitle: 'Page Not Found!' });
+    res.status(404).render('404', { pageTitle: 'Page Not Found!'});
 });
 
 

@@ -11,12 +11,13 @@ exports.getAddProducts = (req, res, next) => {
 };
 
 exports.postAddProducts = (req, res, next) => {
-    const product = new Product(req.body.title);
+    const product = new Product(req.body.title);  // Creates new product
     product.save();
     res.redirect('/');
 };
 
 exports.getProducts = (req, res, next) => {
+    const products = Product.fetchAll();  // Fetches all products
     res.render('shop', {
         prods: products,
         pageTitle: 'Shop',

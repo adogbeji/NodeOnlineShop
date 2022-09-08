@@ -1,9 +1,8 @@
 const path = require('path');
 
-const express = require('express')
+const express = require('express');
 const bodyParser = require('body-parser');
 
-// 404 page controller
 const errorController = require('./controllers/error');
 
 const app = express();
@@ -14,10 +13,9 @@ app.set('views', 'views');
 const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(express.static(path.join(__dirname, 'public')));  // Serves files statically
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, 'public')));
 
-// Outsourced routes
 app.use('/admin', adminRoutes);
 app.use(shopRoutes);
 

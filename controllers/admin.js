@@ -35,13 +35,9 @@ exports.getEditProduct = (req, res, next) => {
       product: product
     });
   });
-
-  // res.render('admin/edit-product', {
-  //   pageTitle: 'Edit Product',
-  //   path: '/admin/edit-product',
-  //   editing: editMode
-  // });
 };
+
+exports.postEditProduct = (req, res, next) => {}  // Code for updating product goes here
 
 exports.getProducts = (req, res, next) => {
   Product.fetchAll(products => {

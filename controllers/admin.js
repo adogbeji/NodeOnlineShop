@@ -37,7 +37,21 @@ exports.getEditProduct = (req, res, next) => {
   });
 };
 
-exports.postEditProduct = (req, res, next) => {}  // Code for updating product goes here
+exports.postEditProduct = (req, res, next) => {
+  const prodId = req.body.productId;
+  const updatedTitle = req.body.title;
+  const updatedPrice = req.body.price;
+  const updatedImageurl = req.body.imageUrl;
+  const updatedDesc = req.body.description;
+  const updatedProduct = new Product(
+    prodId, 
+    updatedTitle, 
+    updatedImageurl, 
+    updatedDesc, 
+    updatedPrice
+  );
+  updatedProduct.save();
+};
 
 exports.getProducts = (req, res, next) => {
   Product.fetchAll(products => {

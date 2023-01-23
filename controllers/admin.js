@@ -51,6 +51,7 @@ exports.postEditProduct = (req, res, next) => {
     updatedPrice
   );
   updatedProduct.save();
+  res.redirect('/admin/products');
 };
 
 exports.getProducts = (req, res, next) => {

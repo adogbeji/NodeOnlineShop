@@ -18,11 +18,14 @@ exports.postAddProduct = (req, res, next) => {
     price: price,
     imageUrl: imageUrl,
     description: description
-  }).then(result => {
-    console.log('Created Product!');
-  }).catch(err => {
-    console.log(err);
-  });
+  })
+    .then(result => {
+      // console.log(result);
+      console.log('Created Product');
+    })
+    .catch(err => {
+      console.log(err);
+    });
 };
 
 exports.getEditProduct = (req, res, next) => {
